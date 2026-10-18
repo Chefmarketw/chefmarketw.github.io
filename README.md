@@ -17,6 +17,8 @@ Free maze game for PC and mobile, no install needed. Drop pressure cookers that 
 
 **Power-ups:** corn (+1 pot at a time), chili (+1 blast range) and coffee (more speed).
 
+**Daily Special:** every day brings 5 levels that are the same for everyone, and you get one try. Share your result on X.
+
 The game comes in English and Spanish and starts in your device's language.
 
 ## Español
@@ -26,6 +28,7 @@ Juego gratis de laberinto para PC y celular, sin instalar nada. Pon ollas a pres
 - **PC:** flechas o WASD para moverte, Espacio para poner una olla.
 - **Celular:** cruceta y botón OLLA en pantalla.
 - **Ingredientes:** maíz (+1 olla a la vez), ají (+1 de alcance) y café (más velocidad).
+- **Menú del día:** cada día hay 5 niveles iguales para todos y un solo intento. Comparte tu resultado en X.
 
 ---
 
