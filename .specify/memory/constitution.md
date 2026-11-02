@@ -1,50 +1,46 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version: (plantilla) → 1.0.0
+- Principios añadidos: I–VI (todos nuevos)
+- Secciones añadidas: Restricciones técnicas, Flujo de trabajo, Gobierno
+- Plantillas: plan/spec/tasks sin cambios necesarios ✅
+- Pendiente: recrear tools/build.py (fuentes + minificado)
+-->
+# Constitución de $CHEF Explosive Kitchen
 
-## Core Principles
+## Principios
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Un solo archivo, sin dependencias
+El juego se entrega como un único HTML autocontenido: JS y CSS en línea, fuentes en base64 y sin CDN, frameworks ni pasos de instalación para jugar. Si una funcionalidad necesita una librería externa, hay que justificarlo en el plan y aprobarlo.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Funciona sin red de terceros
+Jugar nunca depende de un servicio externo. El ranking y el conteo (Supabase) son opcionales: si fallan o tardan más de 8 s, el juego sigue y solo muestra un aviso. Ninguna funcionalidad nueva puede bloquear el inicio ni la partida.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. PC y celular por igual (NO NEGOCIABLE)
+Cada cambio funciona con teclado (flechas/WASD + Espacio) y con controles táctiles (cruceta + botón OLLA), en pantallas horizontales, verticales y bajas. Se respeta `prefers-reduced-motion` y se mantienen las etiquetas ARIA.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Bilingüe: inglés primero
+Todo texto visible existe en inglés y en español dentro de `TEXT`. Lo público (README, meta, vistas previas, textos para compartir) va primero en inglés y después en español. El idioma inicial se toma del dispositivo.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Justo y reproducible
+El Menú del día es igual para todos: la misma semilla da el mismo mapa en cualquier dispositivo y orientación. Los cambios a la generación de niveles, a los puntos o a la dificultad no pueden cambiar en mitad del día un Menú que ya empezó. Si hace falta, se aplican desde el día siguiente.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Privacidad y sin promesas financieras
+No se recogen datos personales: solo un código anónimo al azar y el @ de X que el jugador escribe voluntariamente. Sin rastreadores ni analítica de terceros. El juego es gratis y no exige comprar $CHEF. Ningún texto promete ganancias.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Restricciones técnicas
+- Canvas 2D y `requestAnimationFrame`. El arte se dibuja por código y se guarda en caché según el tamaño de la casilla.
+- `src/game.html` es la fuente legible y `index.html` la versión publicada (minificada, con el `<head>` público).
+- Supabase (`frnpeqrldutmjikalmps`): solo la llave *publishable* va en el cliente. Las tablas tienen RLS y restricciones `CHECK`. Los cambios de esquema se hacen con migraciones.
+- La identidad visual del gato $CHEF (bengalí, lentes, hoodie negro, corona dorada) es fija.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Flujo de trabajo
+- Cada funcionalidad pasa por Spec Kit: spec → plan → tasks → implement, en `specs/NNN-nombre/`.
+- Se trabaja en ramas y GitHub Pages publica desde `main`.
+- Commits en inglés, en imperativo y desde el punto de vista del jugador.
+- Antes de hacer merge se prueba en el navegador en PC y en celular (o con un viewport de celular), revisando ES y EN.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Gobierno
+Esta constitución tiene prioridad sobre cualquier otra práctica. Cada plan revisa que la cumple. Los cambios a la constitución se documentan aquí y suben la versión: MAJOR si se quita o cambia un principio, MINOR si se añade uno y PATCH si solo se aclara algo. La guía del día a día está en `CLAUDE.md`.
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-11-02 | **Last Amended**: 2026-11-02
