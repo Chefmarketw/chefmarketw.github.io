@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://chefmarketw.github.io"><img src="card.jpg" alt="$CHEF Explosive Kitchen: the $CHEF cat and a kitchen with pots, rats and ingredients" width="100%"></a>
+  <a href="https://chefmarketw.github.io"><img src="card.jpg" alt="$CHEF Explosive Kitchen: the $CHEF cat in a kitchen with a pressure cooker and a rat" width="100%"></a>
 </p>
 
 <h1 align="center">$CHEF Explosive Kitchen</h1>
